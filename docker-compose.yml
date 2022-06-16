@@ -7,6 +7,11 @@ services:
     container_name: sele-app
     ports:
      - 1234:1234
+  tester:
+    build:
+      context: ./tester
+    depends_on:
+      - selenium-hub
   selenium-hub:
     image: selenium/hub
     container_name: sele-selenium-hub
